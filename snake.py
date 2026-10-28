@@ -8,7 +8,8 @@ Exercises
 4. Change the snake to respond to mouse clicks.
 """
 
-from random import randrange
+'''import randit'''
+from random import randint, choice, randrange
 from turtle import *
 
 from freegames import square, vector
@@ -43,10 +44,15 @@ def move():
 
     if head == food:
         print('Snake:', len(snake))
-        food.x = randrange(-15, 15) * 10
-        food.y = randrange(-15, 15) * 10
+        food.x = randrange(-15, 14) * 10
+        food.y = randrange(-15, 14) * 10
     else:
         snake.pop(0)
+
+    """Move food cffff."""
+    step = choice([vector(10, 0), vector(-10, 0), vector(0, 10), vector(0, -10)])
+    if inside(food + step):
+        food.move(step)
 
     clear()
 
