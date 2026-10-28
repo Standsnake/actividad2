@@ -49,7 +49,7 @@ def move():
     else:
         snake.pop(0)
 
-    """Move food cffff."""
+    
     step = choice([vector(10, 0), vector(-10, 0), vector(0, 10), vector(0, -10)])
     if inside(food + step):
         food.move(step)
